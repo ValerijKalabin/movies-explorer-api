@@ -1,0 +1,27 @@
+{
+  "name": "movies-explorer-api",
+  "version": "1.0.0",
+  "description": "Api for the movie search app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValerijKalabin/movies-explorer-api.git"
+  },
+  "author": "Valery Kalabin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValerijKalabin/movies-explorer-api/issues"
+  },
+  "homepage": "https://github.com/ValerijKalabin/movies-explorer-api#readme",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.7"
+  }
+}
