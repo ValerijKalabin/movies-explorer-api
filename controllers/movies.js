@@ -41,7 +41,7 @@ module.exports.getMovies = (req, res, next) => Movie.find({ owner: req.user._id 
   .then((movies) => res.status(200).send(movies))
   .catch(() => next(new NotFoundError('Фильмы не найдены')));
 
-module.exports.deleteMovie = (req, res, next) => Movie.findById(req.params.deleteMovieId)
+module.exports.deleteMovie = (req, res, next) => Movie.findById(req.params.movieId)
   .orFail()
   .then((movie) => {
     if (String(movie.owner) !== String(req.user._id)) {
