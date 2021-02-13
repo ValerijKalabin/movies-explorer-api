@@ -15,7 +15,7 @@ router.get('/users/me', getUser);
 router.patch('/users/me', celebrate(userRule), updateUser);
 router.get('/movies', getMovies);
 router.post('/movies', celebrate(movieRule), createMovie);
-router.delete('/movies/movieId', celebrate(movieIdRule), deleteMovie);
+router.delete('/movies/:movieId', celebrate(movieIdRule), deleteMovie);
 router.post('/signout', signout);
 
 module.exports = router;

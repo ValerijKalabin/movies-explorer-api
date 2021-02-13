@@ -3,6 +3,7 @@
   "rules": {
     "no-useless-escape": "off",
     "consistent-return": "off",
+    "no-unused-vars":"off",
     "no-underscore-dangle": [
       "error",
       {

@@ -4,7 +4,7 @@ module.exports.movieRule = {
   body: Joi.object().keys({
     country: Joi.string().required(),
     director: Joi.string().required(),
-    duration: Joi.string().required(),
+    duration: Joi.number().required(),
     year: Joi.string().required(),
     description: Joi.string().required(),
     nameRU: Joi.string().required(),
@@ -17,6 +17,6 @@ module.exports.movieRule = {
 
 module.exports.movieIdRule = {
   params: Joi.object().keys({
-    cardId: Joi.string().required().length(24),
+    movieId: Joi.string().required().length(24),
   }),
 };
