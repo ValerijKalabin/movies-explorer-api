@@ -17,7 +17,9 @@ module.exports.signup = (req, res, next) => {
       email,
       hash,
     }))
-    .then((user) => res.status(200).send(user))
+    .then(() => res.status(200).send({
+      message: 'Успешная регистрация',
+    }))
     .catch((error) => {
       let currentError = error;
       if (error.name === 'ValidationError') {
@@ -45,7 +47,9 @@ module.exports.signin = (req, res, next) => {
         httpOnly: true,
         sameSite: true,
       })
-        .status(201).send(user);
+        .status(201).send({
+          message: 'Успешная авторизация',
+        });
     })
     .catch(next);
 };
