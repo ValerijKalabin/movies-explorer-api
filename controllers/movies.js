@@ -5,7 +5,7 @@ const AccessDeniedError = require('../errors/access-denied-error');
 
 module.exports.createMovie = (req, res, next) => {
   const {
-    _id,
+    movieId,
     country,
     director,
     duration,
@@ -18,6 +18,7 @@ module.exports.createMovie = (req, res, next) => {
     nameEN,
   } = req.body;
   return Movie.create({
+    movieId,
     country,
     director,
     duration,
@@ -29,7 +30,6 @@ module.exports.createMovie = (req, res, next) => {
     nameRU,
     nameEN,
     owner: req.user._id,
-    movieId: _id,
   })
     .then((movie) => res.send(movie))
     .catch((error) => next(error.name === 'ValidationError'
