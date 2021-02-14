@@ -4,7 +4,7 @@ const RequestError = require('../errors/request-error');
 
 module.exports.getUser = (req, res, next) => User.findById(req.user._id)
   .orFail()
-  .then((user) => res.status(200).send(user))
+  .then((user) => res.send(user))
   .catch(() => next(new NotFoundError('Пользователь не найден')));
 
 module.exports.updateUser = (req, res, next) => {
@@ -18,7 +18,7 @@ module.exports.updateUser = (req, res, next) => {
     },
   )
     .orFail()
-    .then((user) => res.status(200).send(user))
+    .then((user) => res.send(user))
     .catch((error) => next(error.name === 'ValidationError'
       ? new RequestError('Укажите корректные данные пользователя')
       : error));

@@ -17,7 +17,7 @@ module.exports.signup = (req, res, next) => {
       email,
       hash,
     }))
-    .then(() => res.status(200).send({
+    .then(() => res.send({
       message: 'Успешная регистрация',
     }))
     .catch((error) => {
@@ -59,6 +59,6 @@ module.exports.signout = (req, res) => res.cookie('token', '', {
   httpOnly: true,
   sameSite: true,
 })
-  .status(200).send({
+  .send({
     message: 'Выход из системы',
   });
