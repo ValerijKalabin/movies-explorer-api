@@ -47,7 +47,7 @@ module.exports.deleteMovie = (req, res, next) => Movie.findById(req.params.movie
     if (String(movie.owner) !== String(req.user._id)) {
       throw new AccessDeniedError('Вы не можете удалить этот фильм');
     }
-    return Movie.findByIdAndRemove(movie._id).then(() => res.send(movie));
+    return movie.remove().then(() => res.send(movie));
   })
   .catch((error) => next(error.statusCode
     ? error
