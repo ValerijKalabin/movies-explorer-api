@@ -2,6 +2,7 @@ const { Joi } = require('celebrate');
 
 module.exports.movieRule = {
   body: Joi.object().keys({
+    movieId: Joi.number().required(),
     country: Joi.string().required(),
     director: Joi.string().required(),
     duration: Joi.number().required(),
